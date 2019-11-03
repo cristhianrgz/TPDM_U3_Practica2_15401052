@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Descripción"
+        android:textSize="20dp"
+        android:id="@+id/EditDescrip"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Monto"
+        android:textSize="20dp"
+        android:inputType="numberDecimal"
+        android:id="@+id/EditMonto"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Fecha vencimiento"
+        android:textSize="20dp"
+        android:inputType="date"
+        android:id="@+id/EditFechaVencimiento"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pagado:  "
+        android:textSize="20dp"
+        />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SI"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:id="@+id/checkpagado"
+        />
+    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Insertar"
+        android:layout_marginTop="5dp"
+        android:textSize="20dp"
+        android:id="@+id/btnInsert"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mostrar"
+        android:layout_marginTop="5dp"
+        android:textSize="20dp"
+        android:id="@+id/btnmostrar"
+        />
+
+</LinearLayout>
