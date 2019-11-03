@@ -2,18 +2,19 @@ package mx.edu.tpdm_u3_practica2_15401052
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.EditText
-import android.widget.Toast
+import android.widget.*
+import kotlinx.android.synthetic.main.activity_main.*
+import org.w3c.dom.Text
 import java.net.URL
 
 class MainActivity : AppCompatActivity() {
     var descripcion : EditText ?= null
     var monto : EditText ?= null
     var fechavencimiento : EditText ?= null
+    var mostrarConsulta : TextView ?= null
     var pagado : CheckBox ?= null
     var insertar : Button ?= null
+    var cargar : Button ?= null
     var mostrar : Button ?= null
     var jsonRegreso = ArrayList<org.json.JSONObject>()
     var varPagado = ""
@@ -26,7 +27,9 @@ class MainActivity : AppCompatActivity() {
         fechavencimiento = findViewById(R.id.EditFechaVencimiento)
         pagado = findViewById(R.id.checkpagado)
         insertar = findViewById(R.id.btnInsert)
+        cargar = findViewById(R.id.btnCargar)
         mostrar = findViewById(R.id.btnmostrar)
+        mostrarConsulta = findViewById(R.id.mostrarRegistros)
 
         insertar?.setOnClickListener {
             if(pagado?.isChecked == true){
@@ -45,6 +48,20 @@ class MainActivity : AppCompatActivity() {
             conexionWeb.agregarVariables("pagado", pagado?.text.toString())
 
             conexionWeb.execute(URL("https://cryptic-chamber-14232.herokuapp.com/insertarRecibo.php"))
+        }
+
+        cargar?.setOnClickListener {
+            cargar?.setOnClickListener {
+                var conexionWeb = ConexionWeb(this)
+                conexionWeb.execute(URL("https://cryptic-chamber-14232.herokuapp.com/consultageneralRecibo.php"))
+            }
+        }
+
+        mostrar?.setOnClickListener {
+            val posicion = descripcion?.text.toString().toInt()
+            val jsonObject = jsonRegreso.get(posicion)
+
+            mostrarRegistros.setText("Descripción "+jsonObject.getString("descripcion"))
         }
     }
 

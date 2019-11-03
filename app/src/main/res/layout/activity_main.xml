@@ -65,10 +65,38 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Cargar"
+        android:layout_marginTop="5dp"
+        android:textSize="20dp"
+        android:id="@+id/btnCargar"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="Mostrar"
         android:layout_marginTop="5dp"
         android:textSize="20dp"
         android:id="@+id/btnmostrar"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:text="Registros"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mostrarRegistros"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:text="No hay registros"
         />
 
 </LinearLayout>
